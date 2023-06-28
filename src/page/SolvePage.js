@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 function SolvePage() {
   return (
@@ -10,7 +10,7 @@ function SolvePage() {
       <button>선택3</button>
       <button>선택4</button>
     </>
-  );
+  )
 }
 
-export default SolvePage;
+export default SolvePage
