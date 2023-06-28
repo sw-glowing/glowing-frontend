@@ -9,9 +9,9 @@ import LearnPage from './page/LearnPage'
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<LearnPage />} />;
+      <Route path="/" element={<HomePage />} />;
     </Routes>
-  )
+  );
 }
 
 export default App
