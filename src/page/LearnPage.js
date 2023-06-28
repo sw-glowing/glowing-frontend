@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 function LearnPage() {
   return (
@@ -6,7 +6,7 @@ function LearnPage() {
       <h2>단어</h2>
       <p>뜻풀이</p>
     </>
-  );
+  )
 }
 
-export default LearnPage;
+export default LearnPage
