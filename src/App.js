@@ -1,15 +1,13 @@
-import React from 'react'
-import { Routes, Route } from 'react-router-dom'
-
-import './App.css'
-import HomePage from './page/HomePage'
+import logo from './logo.svg';
+import './App.css';
+import LearnPage from './page/LearnPage.js';
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />;
-    </Routes>
-  )
+    <div className="App">
+      <LearnPage/>
+    </div>
+  );
 }
 
 export default App
