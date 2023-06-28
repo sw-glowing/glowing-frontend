@@ -6,6 +6,10 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "decimal.js": "^10.4.3",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",
@@ -14,6 +18,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "lint": "eslint --ext src/**/*.js src/**/*.js",
+    "lint:fix": "eslint --ext src/**/*.js --fix src/**/*.js",
+    "format": "prettier --write src/**/*.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -36,5 +43,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^4.1.1",
+    "eslint": "^8.35.0",
+    "eslint-plugin-react": "^7.32.2"
   }
 }
