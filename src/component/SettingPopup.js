@@ -1,4 +1,5 @@
 import React from 'react'
+import { GrPowerReset } from 'react-icons/gr'
 
 import styled from 'styled-components'
 
@@ -10,7 +11,7 @@ const RootCont = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  padding: 16px;
+  padding: 32px;
   background-color: ${COLORS.white};
   border-radius: 24px;
 `
@@ -21,10 +22,13 @@ const Title = styled.p`
 const Menu = styled.span`
   font-size: 0.9em;
   color: ${COLORS.coolgray002};
+  width: 128px;
 `
 const Column = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  height: 64px;
 `
 const Themes = styled.div``
 const SubTitle = styled.p`
@@ -35,9 +39,18 @@ const Line = styled.div`
   width: 100%;
   border: 1px solid ${COLORS.coolgray002};
 `
+const Gap8 = styled.div`
+  padding-bottom: 8px;
+`
+const Label = styled.span`
+  font-size: 0.9em;
+  padding: 8px;
+  line-height: 1em;
+`
 const Input = styled.input`
   background: url('/niddle.svg') no-repeat left;
   appearance: none;
+  width: 250px;
 `
 
 function SettingPopup({ setVolume, volume, setMode }) {
@@ -47,7 +60,25 @@ function SettingPopup({ setVolume, volume, setMode }) {
     <RootCont>
       <Title>내멋대로 설정</Title>
       <SubTitle>원하는 테마로 학습하세요</SubTitle>
+      <div
+        onClick={() => {
+          setMode(themeKey[4])
+          setVolume(20)
+          localStorage.setItem('fontvolume', volume)
+        }}
+      >
+        <Column>
+          <div></div>
+          <div>
+            <Label>초기화</Label>
+            <GrPowerReset />
+          </div>
+        </Column>
+      </div>
+      <Gap8 />
       <Line />
+      <Gap8 />
+
       <Column>
         <Menu>테마</Menu>
         {allThemes.map((t, i) => (
