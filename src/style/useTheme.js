@@ -25,5 +25,6 @@ export const useTheme = () => {
 
   const toggleTheme = () => setMode(theme === 'light' ? 'dark' : 'light')
   const allThemes = [dark, light, bubblegum]
-  return [theme, allThemes, setMode]
+  const themeKey = ['dark', 'light', 'bubblegum']
+  return [theme, allThemes, themeKey, setMode]
 }

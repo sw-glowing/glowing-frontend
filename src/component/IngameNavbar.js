@@ -7,6 +7,7 @@ import styled from 'styled-components'
 const Cont = styled.div`
   display: flex;
   justify-content: space-between;
+  line-height: 18px;
 `
 function IngameNavbar({ onMenu }) {
   return (
