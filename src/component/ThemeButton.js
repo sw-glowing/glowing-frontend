@@ -12,7 +12,6 @@ const Button = styled.button`
 `
 
 function ThemeButton({ themeColor, onClick }) {
-  console.log(themeColor)
   return (
     <Button themeColor={themeColor} onClick={onClick}>
       가

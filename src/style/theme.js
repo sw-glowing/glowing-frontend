@@ -11,9 +11,9 @@ export const light = {
     bgColor: '#121212',
   },
 }
-export const redTheme = {
+export const bubblegum = {
   colors: {
-    textColor: 'red',
-    bgColor: 'gray',
+    textColor: '#FF0081',
+    bgColor: '#FFC2CD',
   },
 }
