@@ -1,15 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
-import LearnPage from './page/LearnPage.js';
-import IngameLayout from './component/layout/IngameLayout';
-import SolvePage from './page/SolvePage';
-
+import "./App.css";
+import IngameLayout from "./component/layout/IngameLayout";
+import logo from "./logo.svg";
+import LearnPage from "./page/LearnPage.js";
+import SolvePage from "./page/SolvePage";
 
 function App() {
   return (
     <div className="App">
       <IngameLayout>
-        <SolvePage/>
+        <SolvePage />
       </IngameLayout>
     </div>
   );
