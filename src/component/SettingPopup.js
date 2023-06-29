@@ -30,7 +30,6 @@ const Column = styled.div`
   align-items: center;
   height: 64px;
 `
-const Themes = styled.div``
 const SubTitle = styled.p`
   font-size: 0.8em;
   color: ${COLORS.coolgray002};
