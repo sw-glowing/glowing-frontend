@@ -26,6 +26,7 @@ const Column = styled.div`
   display: flex;
   justify-content: space-between;
 `
+const Themes = styled.div``
 const SubTitle = styled.p`
   font-size: 0.8em;
   color: ${COLORS.coolgray002};
@@ -35,7 +36,8 @@ const Line = styled.div`
   border: 1px solid ${COLORS.coolgray002};
 `
 const Input = styled.input`
-  background: url('');
+  background: url('/niddle.svg') no-repeat left;
+  appearance: none;
 `
 
 function SettingPopup({ setVolume, volume, setMode }) {
@@ -51,8 +53,7 @@ function SettingPopup({ setVolume, volume, setMode }) {
         {allThemes.map((t, i) => (
           <ThemeButton
             key={i}
-            url={`themebutton/${i + 1}.png`}
-            themeColor={t}
+            id={i + 1}
             onClick={() => {
               setMode(themeKey[i])
             }}
