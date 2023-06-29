@@ -31,24 +31,15 @@ const IngameLayout = ({ children }) => {
         <IngameNavbar onMenu={toggleDrawer} />
         <>{children}</>
         <Drawer open={isOpen} onClose={toggleDrawer} direction="right" className="bla bla bla">
-          <ThemeButton
-            themeColor={light}
-            onClick={() => {
-              setMode('light')
-            }}
-          />
-          <ThemeButton
-            themeColor={dark}
-            onClick={() => {
-              setMode('dark')
-            }}
-          />
-          <ThemeButton
-            themeColor={bubblegum}
-            onClick={() => {
-              setMode('bubblegum')
-            }}
-          />
+          {allThemes.map((t, i) => (
+            <ThemeButton
+              key={i}
+              themeColor={t}
+              onClick={() => {
+                setMode(themeKey[i])
+              }}
+            />
+          ))}
         </Drawer>
       </Main>
     </ThemeProvider>
