@@ -60,18 +60,21 @@ function SettingPopup({ setVolume, volume, setMode }) {
           />
         ))}
       </Column>
-      <Input
-        type="range"
-        min={0}
-        max={40}
-        color="gray"
-        step={2}
-        value={volume}
-        onChange={(event) => {
-          setVolume(event.target.valueAsNumber)
-        }}
-      />
-      <div style={{ fontSize: 10, border: '1px solid pink', borderRadius: 5, padding: 5 }}>{volume + 12} px</div>
+      <Column>
+        <Menu>글자크기</Menu>
+        <Input
+          type="range"
+          min={0}
+          max={40}
+          color="gray"
+          step={2}
+          value={volume}
+          onChange={(event) => {
+            setVolume(event.target.valueAsNumber)
+            localStorage.setItem('fontvolume', volume)
+          }}
+        />
+      </Column>
     </RootCont>
   )
 }

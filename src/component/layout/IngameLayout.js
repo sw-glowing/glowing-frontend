@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useEffect } from 'react'
 
 import styled, { ThemeProvider } from 'styled-components'
 
@@ -31,6 +32,13 @@ const IngameLayout = ({ children }) => {
   const togglePopup = () => {
     setIsOpen((prevState) => !prevState)
   }
+  useEffect(() => {
+    const localSettingFontVolume = localStorage.getItem('fontvolume')
+    if (localSettingFontVolume) {
+      setVolume(localSettingFontVolume)
+    }
+    return () => {}
+  }, [])
   return (
     <>
       <IngameNavbar onMenu={togglePopup} />
