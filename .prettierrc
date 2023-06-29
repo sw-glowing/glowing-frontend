@@ -8,7 +8,7 @@
   "importOrderCaseInsensitive": true,
   "importOrder": [
     "^react",
-    "^react-dom$",
+    "^react-$",
     "<THIRD_PARTY_MODULES>",
     "^[./]"
   ],
