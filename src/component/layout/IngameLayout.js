@@ -31,6 +31,7 @@ const IngameLayout = ({ children }) => {
   const togglePopup = () => {
     setIsOpen((prevState) => !prevState)
   }
+  console.log(themeMode, allThemes, themeKey)
   return (
     <>
       <IngameNavbar onMenu={togglePopup} />

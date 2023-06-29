@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { dark, light, bubblegum } from './theme'
+import { dark, light, orangeTheme, greenTheme, violetTheme, pinkTheme } from './theme'
 
 export const useTheme = () => {
   // 브라우저 테마 정보 확인
@@ -24,7 +24,7 @@ export const useTheme = () => {
   }
 
   const toggleTheme = () => setMode(theme === 'light' ? 'dark' : 'light')
-  const allThemes = [dark, light, bubblegum]
-  const themeKey = ['dark', 'light', 'bubblegum']
+  const allThemes = [orangeTheme, pinkTheme, violetTheme, greenTheme, light, dark]
+  const themeKey = ['orange', 'pink', 'violet', 'green', 'light', 'dark']
   return [theme, allThemes, themeKey, setMode]
 }

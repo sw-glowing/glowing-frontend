@@ -51,6 +51,7 @@ function SettingPopup({ setVolume, volume, setMode }) {
         {allThemes.map((t, i) => (
           <ThemeButton
             key={i}
+            url={`themebutton/${i + 1}.png`}
             themeColor={t}
             onClick={() => {
               setMode(themeKey[i])

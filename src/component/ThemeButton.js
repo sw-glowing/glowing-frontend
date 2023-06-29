@@ -11,12 +11,8 @@ const Button = styled.button`
   border: none;
 `
 
-function ThemeButton({ themeColor, onClick }) {
-  return (
-    <Button themeColor={themeColor} onClick={onClick}>
-      가
-    </Button>
-  )
+function ThemeButton({ themeColor, url, onClick }) {
+  return <img src={url} onClick={onClick} />
 }
 
 export default ThemeButton

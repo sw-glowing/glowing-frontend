@@ -1,19 +1,41 @@
-export const dark = {
+import { COLORS } from './color'
+
+export const orangeTheme = {
   colors: {
-    textColor: '#121212',
-    bgColor: '#b8b8b8',
+    textColor: COLORS.black,
+    bgColor: COLORS.orange,
   },
 }
 
-export const light = {
+export const pinkTheme = {
   colors: {
-    textColor: '#b8b8b8',
-    bgColor: '#121212',
+    textColor: COLORS.white,
+    bgColor: COLORS.pink,
   },
 }
-export const bubblegum = {
+
+export const violetTheme = {
   colors: {
-    textColor: '#FF0081',
-    bgColor: '#FFC2CD',
+    textColor: COLORS.white,
+    bgColor: COLORS.violet,
+  },
+}
+export const greenTheme = {
+  colors: {
+    textColor: COLORS.black,
+    bgColor: COLORS.green,
+  },
+}
+export const light = {
+  colors: {
+    textColor: COLORS.black,
+    bgColor: COLORS.white,
+  },
+}
+
+export const dark = {
+  colors: {
+    textColor: COLORS.white,
+    bgColor: COLORS.black,
   },
 }
