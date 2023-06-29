@@ -11,3 +11,9 @@ export const light = {
     bgColor: '#121212',
   },
 }
+export const redTheme = {
+  colors: {
+    textColor: 'red',
+    bgColor: 'gray',
+  },
+}

@@ -5,9 +5,10 @@ import 'react-modern-drawer/dist/index.css'
 
 import styled, { ThemeProvider } from 'styled-components'
 
-import { dark, light } from '../../style/theme'
+import { dark, light, redTheme } from '../../style/theme'
 import { useTheme } from '../../style/useTheme'
 import IngameNavbar from '../IngameNavbar'
+import ThemeButton from '../ThemeButton'
 
 const Main = styled.div`
   width: 100%;
@@ -15,7 +16,6 @@ const Main = styled.div`
   background-color: ${(props) => props.theme.colors.bgColor};
   color: ${(props) => props.theme.colors.textColor};
 `
-
 const IngameLayout = ({ children }) => {
   const [themeMode, toggleTheme] = useTheme() // hook 함수 하용
   const theme = themeMode === 'light' ? light : dark
@@ -30,10 +30,9 @@ const IngameLayout = ({ children }) => {
         <IngameNavbar onMenu={toggleDrawer} />
         <>{children}</>
         <Drawer open={isOpen} onClose={toggleDrawer} direction="right" className="bla bla bla">
-          <button
-            title={theme === 'light' ? '일반모드로 테마 변경하기' : '다크모드로 테마 변경하기'}
-            onClick={toggleTheme}
-          />
+          <ThemeButton themeColor={redTheme} onClick={toggleTheme}>
+            테마 변경
+          </ThemeButton>
         </Drawer>
       </Main>
     </ThemeProvider>
