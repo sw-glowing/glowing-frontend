@@ -17,10 +17,9 @@ const Main = styled.div`
   color: ${(props) => props.theme.colors.textColor};
 `
 const IngameLayout = ({ children }) => {
-  const [themeMode, toggle, setMode] = useTheme()
-  const themes = [dark, light, bubblegum]
+  const [themeMode, allThemes, setMode] = useTheme()
   const themeKey = ['dark', 'light', 'bubblegum']
-  const theme = themes[themeKey.indexOf(themeMode)]
+  const theme = allThemes[themeKey.indexOf(themeMode)]
   const [isOpen, setIsOpen] = React.useState(false)
   const toggleDrawer = () => {
     setIsOpen((prevState) => !prevState)

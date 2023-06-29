@@ -1,5 +1,7 @@
 import { useState } from 'react'
 
+import { dark, light, bubblegum } from './theme'
+
 export const useTheme = () => {
   // 브라우저 테마 정보 확인
   const isBrowserDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -22,6 +24,6 @@ export const useTheme = () => {
   }
 
   const toggleTheme = () => setMode(theme === 'light' ? 'dark' : 'light')
-
-  return [theme, toggleTheme, setMode]
+  const allThemes = [dark, light, bubblegum]
+  return [theme, allThemes, setMode]
 }
