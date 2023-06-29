@@ -17,6 +17,7 @@ module.exports = {
   },
   plugins: ['react', 'prettier', 'import'],
   rules: {
+    'react/prop-types': 'off',
     'prettier/prettier': 'warn',
     indent: ['error', 2],
     'linebreak-style': ['error', 'unix'],
