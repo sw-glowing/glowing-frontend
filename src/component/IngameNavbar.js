@@ -1,11 +1,11 @@
 import React from 'react'
-import {IoIosArrowBack} from 'react-icons/io';
 
+import { IoIosArrowBack } from 'react-icons/io'
 
 function IngameNavbar() {
   return (
     <>
-      <IoIosArrowBack/>
+      <IoIosArrowBack />
       <span>1/10</span>
       <></>
     </>
