@@ -16,5 +16,21 @@ export default createGlobalStyle`
     #root{
       height: 100%;
     }
+    input::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 16px;
+      height: 16px;
+      background: url('/themebutton/4.png');
+      background-size: contain;
+      cursor: pointer;
+    }
 
+    input::-moz-range-thumb {
+      width: 16px;
+      height: 16px;
+      background: url('/themebutton/4.png');
+      background-size: contain;
+      cursor: pointer;
+    }
 `
