@@ -1,17 +1,46 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
+
+const jumpAnimation = keyframes`
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+`
+
+const JumpingImage = styled.img`
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  animation: ${jumpAnimation} 0.5s;
+
+  &:active {
+    animation: none; /* Disable the animation on long press */
+  }
+`
 
 function ThemeButton({ id, onClick, isChecked = false }) {
+  const [isAnimating, setIsAnimating] = useState(false)
+
+  const handleOnClick = () => {
+    setIsAnimating(true)
+    onClick()
+    setTimeout(() => {
+      setIsAnimating(false)
+    }, 500) // Duration of the animation, adjust as needed
+  }
+
   return (
-    <img
-      style={{
-        cursor: 'pointer',
-      }}
-      width={'32px'}
-      height={'32px'}
+    <JumpingImage
       src={isChecked ? `themebutton/${parseInt(id)}s.png` : `themebutton/${parseInt(id)}.png`}
-      onClick={onClick}
+      onClick={handleOnClick}
+      style={{ transform: isAnimating ? 'translateY(-10px)' : 'translateY(0)' }}
     />
   )
 }

@@ -25,6 +25,14 @@ const Menu = styled.span`
   color: ${COLORS.coolgray002};
   width: 128px;
 `
+
+const Box = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+`
+
 const Column = styled.div`
   display: flex;
   justify-content: space-between;
@@ -78,10 +86,10 @@ function SettingPopup({ toggleFunc, setVolume, volume, setMode }) {
       >
         <Column>
           <div></div>
-          <div>
+          <Box>
             <Label>초기화</Label>
-            <GrPowerReset />
-          </div>
+            <GrPowerReset style={{ cursor: 'pointer' }} />
+          </Box>
         </Column>
       </div>
       <Gap8 />
