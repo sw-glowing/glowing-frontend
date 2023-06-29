@@ -1,13 +1,12 @@
-import React from 'react';
-import IngameNavbar from '../IngameNavbar';
+import React from 'react'
 
-const IngameLayout = ({children}) => (
-    <>
-        <IngameNavbar/>
-        <>
-        {children}
-        </>
-    </>
-);
+import IngameNavbar from '../IngameNavbar'
 
-export default IngameLayout;
+const IngameLayout = ({ children }) => (
+  <>
+    <IngameNavbar />
+    <>{children}</>
+  </>
+)
+
+export default IngameLayout
