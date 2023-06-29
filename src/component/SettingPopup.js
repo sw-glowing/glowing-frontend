@@ -16,8 +16,9 @@ const RootCont = styled.div`
   position: fixed;
   bottom: 40px;
   right: 40px;
+  box-shadow: 4px 6px 18px rgba(194, 190, 204, 0.34);
 `
-const Title = styled.p`
+const Title = styled.div`
   font-size: 20px;
 `
 const Menu = styled.span`
@@ -44,7 +45,7 @@ const ColumnLight = styled.div`
   justify-content: space-between;
   align-items: center;
 `
-const SubTitle = styled.p`
+const SubTitle = styled.div`
   font-size: 0.8em;
   color: ${COLORS.coolgray002};
 `
@@ -75,6 +76,7 @@ function SettingPopup({ toggleFunc, setVolume, volume, setMode }) {
         <Title>내 멋대로 설정</Title>
         <FaXmark onClick={toggleFunc} />
       </ColumnLight>
+      <Gap8></Gap8>
       <SubTitle>원하는 테마로 학습하세요</SubTitle>
       <div
         onClick={() => {
@@ -92,7 +94,6 @@ function SettingPopup({ toggleFunc, setVolume, volume, setMode }) {
           </Box>
         </Column>
       </div>
-      <Gap8 />
       <Line />
       <Gap8 />
 
