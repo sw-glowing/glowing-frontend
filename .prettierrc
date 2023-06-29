@@ -7,7 +7,7 @@
   "arrowParens": "always",
   "importOrderCaseInsensitive": true,
   "importOrder": [
-    "^react",
+    "^react$",
     "^react-dom$",
     "<THIRD_PARTY_MODULES>",
     "^[./]"
