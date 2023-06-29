@@ -7,12 +7,16 @@ import { Routes, Route } from 'react-router-dom'
 //import styled, { ThemeProvider } from 'styled-components'
 import './App.css'
 import LearnPage from './page/LearnPage'
+import { GlobalStyles } from './style'
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<LearnPage />} />
-    </Routes>
+    <>
+      <GlobalStyles />
+      <Routes>
+        <Route path="/" element={<LearnPage />} />
+      </Routes>
+    </>
   )
 }
 
