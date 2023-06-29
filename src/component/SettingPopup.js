@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { FaXmark } from 'react-icons/fa6'
 import { GrPowerReset } from 'react-icons/gr'
 
 import styled from 'styled-components'
@@ -8,19 +9,19 @@ import { useTheme } from '../style/useTheme'
 import ThemeButton from './ThemeButton'
 
 const RootCont = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 32px;
+  z-index: 10;
+  padding: 28px 48px;
   background-color: ${COLORS.white};
   border-radius: 24px;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
 `
 const Title = styled.p`
-  font-size: 1em;
-  line-height: 1em;
+  font-size: 20px;
 `
 const Menu = styled.span`
-  font-size: 0.9em;
+  font-size: 16px;
   color: ${COLORS.coolgray002};
   width: 128px;
 `
@@ -29,6 +30,11 @@ const Column = styled.div`
   justify-content: space-between;
   align-items: center;
   height: 64px;
+`
+const ColumnLight = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `
 const SubTitle = styled.p`
   font-size: 0.8em;
@@ -52,12 +58,15 @@ const Input = styled.input`
   width: 250px;
 `
 
-function SettingPopup({ setVolume, volume, setMode }) {
+function SettingPopup({ toggleFunc, setVolume, volume, setMode }) {
   const [themeMode, allThemes, themeKey] = useTheme()
   const [checks, setChecks] = useState([false, false, false, false, true, false])
   return (
     <RootCont>
-      <Title>내멋대로 설정</Title>
+      <ColumnLight>
+        <Title>내 멋대로 설정</Title>
+        <FaXmark onClick={toggleFunc} />
+      </ColumnLight>
       <SubTitle>원하는 테마로 학습하세요</SubTitle>
       <div
         onClick={() => {

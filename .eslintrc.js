@@ -17,6 +17,7 @@ module.exports = {
   },
   plugins: ['react', 'prettier', 'import'],
   rules: {
+    'import/no-named-as-default': 'off',
     'react/prop-types': 'off',
     'no-undef': 'off',
     'no-unused-vars': 'off',

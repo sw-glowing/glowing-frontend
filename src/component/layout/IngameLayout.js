@@ -24,14 +24,28 @@ const Header = styled.header`
   left: 0;
   right: 0;
 `
+
+const SettingImage = styled.img`
+  position: fixed;
+  width: 48px;
+  height: 48px;
+  bottom: 40px;
+  right: 40px;
+  transition: transform 0.3s;
+
+  ${({ rotate }) => rotate && 'transform: rotate(45deg);'}
+`
+
 const IngameLayout = ({ children }) => {
   const [themeMode, allThemes, themeKey, setMode] = useTheme()
   const theme = allThemes[themeKey.indexOf(themeMode)]
   const [volume, setVolume] = useState(1)
-  const [isOpen, setIsOpen] = React.useState(false)
+  const [isOpen, setIsOpen] = useState(false)
+
   const togglePopup = () => {
     setIsOpen((prevState) => !prevState)
   }
+
   useEffect(() => {
     const localSettingFontVolume = localStorage.getItem('fontvolume')
     if (localSettingFontVolume) {
@@ -39,15 +53,22 @@ const IngameLayout = ({ children }) => {
     }
     return () => {}
   }, [])
+
   return (
     <>
-      <IngameNavbar onMenu={togglePopup} />
       <ThemeProvider theme={theme} fontSize={0}>
         <Main fontSize={parseInt(volume) + 12}>
           <>{children}</>
         </Main>
-        {isOpen ? <SettingPopup setMode={setMode} setVolume={setVolume} volume={volume} /> : null}
+        {isOpen ? (
+          <SettingPopup toggleFunc={togglePopup} setMode={setMode} setVolume={setVolume} volume={volume} />
+        ) : null}
       </ThemeProvider>
+      <SettingImage
+        src={'setting.png'}
+        onClick={togglePopup}
+        rotate={isOpen} // Add the "rotate" prop based on the "isOpen" state
+      />
     </>
   )
 }
