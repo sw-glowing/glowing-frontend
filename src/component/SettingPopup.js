@@ -34,7 +34,9 @@ const Line = styled.div`
   width: 100%;
   border: 1px solid ${COLORS.coolgray002};
 `
-const Input = styled.input``
+const Input = styled.input`
+  background: url('');
+`
 
 function SettingPopup({ setVolume, volume, setMode }) {
   const [themeMode, allThemes, themeKey] = useTheme()
