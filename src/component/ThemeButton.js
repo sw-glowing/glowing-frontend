@@ -2,7 +2,7 @@ import React from 'react'
 
 import styled from 'styled-components'
 
-function ThemeButton({ id, onClick }) {
+function ThemeButton({ id, onClick, isChecked = false }) {
   return (
     <img
       style={{
@@ -10,7 +10,7 @@ function ThemeButton({ id, onClick }) {
       }}
       width={'32px'}
       height={'32px'}
-      src={`themebutton/${parseInt(id)}.png`}
+      src={isChecked ? `themebutton/${parseInt(id)}s.png` : `themebutton/${parseInt(id)}.png`}
       onClick={onClick}
     />
   )

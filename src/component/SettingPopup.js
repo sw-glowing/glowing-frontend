@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { GrPowerReset } from 'react-icons/gr'
 
 import styled from 'styled-components'
@@ -54,7 +54,7 @@ const Input = styled.input`
 
 function SettingPopup({ setVolume, volume, setMode }) {
   const [themeMode, allThemes, themeKey] = useTheme()
-
+  const [checks, setChecks] = useState([false, false, false, false, true, false])
   return (
     <RootCont>
       <Title>내멋대로 설정</Title>
@@ -62,6 +62,7 @@ function SettingPopup({ setVolume, volume, setMode }) {
       <div
         onClick={() => {
           setMode(themeKey[4])
+          setChecks([false, false, false, false, true, false])
           setVolume(20)
           localStorage.setItem('fontvolume', volume)
         }}
@@ -84,8 +85,12 @@ function SettingPopup({ setVolume, volume, setMode }) {
           <ThemeButton
             key={i}
             id={i + 1}
+            isChecked={checks[i]}
             onClick={() => {
               setMode(themeKey[i])
+              var c = [[false] * 6]
+              c[i] = true
+              setChecks(c)
             }}
           />
         ))}
